@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inspiration & Resources - Academic Career Path</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<div class="nav">
+    <a href="file:///C:/Users/HP/OneDrive/Documents/wedDesign/homepage.html">Home</a>
+    <a href="file:///C:/Users/HP/OneDrive/Documents/wedDesign/stepbystepguide.html">Step by Step</a>
+    <a href="file:///C:/Users/HP/OneDrive/Documents/wedDesign/resources.html">Recources</a>
+</div>
+    <style>
+        /* Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        :root {
+            --primary: #2c3e50;
+            --secondary: #1a252f;
+            --accent: #e74c3c;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+            --highlight: #3498db;
+            --transition: all 0.3s ease;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e2e8f0 100%);
+            color: var(--dark);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header & Navigation */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            padding: 15px 0;
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
+        
+        .logo i {
+            color: var(--accent);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 25px;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            padding: 8px 15px;
+            border-radius: 4px;
+            transition: var(--transition);
+        }
+        
+        .nav-links a:hover, 
+        .nav-links a.active {
+            background: var(--primary);
+            color: white;
+        }
+        
+        /* Page Hero */
+        .page-hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            text-align: center;
+            padding: 100px 0 80px;
+            margin-bottom: 60px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .page-hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1500&q=80') no-repeat center center/cover;
+            opacity: 0.1;
+        }
+        
+        .page-hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            position: relative;
+        }
+        
+        .page-hero p {
+            font-size: 1.4rem;
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        /* Resources Section */
+        .resources-section {
+            padding: 80px 0;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-header h2 {
+            font-size: 2.5rem;
+            color: var(--secondary);
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-header h2::after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--accent);
+        }
+        
+        .section-header p {
+            color: #555;
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+        }
+        
+        /* Influential Figures Table */
+        .table-container {
+            overflow-x: auto;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            margin-bottom: 60px;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        th, td {
+            padding: 20px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+        
+        th {
+            background-color: var(--primary);
+            color: white;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+        
+        tr:hover {
+            background-color: #e9f7fe;
+        }
+        
+        td a {
+            color: var(--highlight);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            display: inline-block;
+            padding: 5px 0;
+        }
+        
+        td a:hover {
+            color: var(--accent);
+            text-decoration: underline;
+        }
+        
+        .profile-img {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--light);
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Books Section */
+        .books-section {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 60px 0;
+            border-radius: 15px;
+            margin-bottom: 60px;
+        }
+        
+        .books-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .book-card {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            padding: 25px;
+            width: 350px;
+            transition: var(--transition);
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+        }
+        
+        .book-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .book-cover {
+            width: 100px;
+            height: 140px;
+            border-radius: 8px;
+            object-fit: cover;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .book-info {
+            flex: 1;
+        }
+        
+        .book-info h3 {
+            margin-bottom: 10px;
+            color: var(--secondary);
+        }
+        
+        .book-info .author {
+            color: #666;
+            margin-bottom: 10px;
+            font-style: italic;
+        }
+        
+        .book-info p {
+            color: #555;
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+        }
+        
+        .book-info a {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+        
+        .book-info a:hover {
+            background: var(--accent);
+            transform: translateY(-3px);
+        }
+        
+        /* Institutions Section */
+        .institutions-section {
+            padding: 40px 0;
+        }
+        
+        .institutions-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+        }
+        
+        .institution-card {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            padding: 30px;
+            width: 350px;
+            transition: var(--transition);
+            text-align: center;
+        }
+        
+        .institution-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .institution-logo {
+            width: 100px;
+            height: 100px;
+            object-fit: contain;
+            margin: 0 auto 20px;
+        }
+        
+        .institution-card h3 {
+            margin-bottom: 15px;
+            color: var(--secondary);
+        }
+        
+        .institution-card p {
+            color: #555;
+            margin-bottom: 20px;
+        }
+        
+        .institution-card a {
+            color: var(--highlight);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .institution-card a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--secondary);
+            color: white;
+            padding: 40px 0 20px;
+            text-align: center;
+            margin-top: 80px;
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+        
+        .footer-section {
+            flex: 1;
+            min-width: 300px;
+            margin: 20px;
+        }
+        
+        .footer-section h3 {
+            margin-bottom: 20px;
+            color: var(--highlight);
+            position: relative;
+            display: inline-block;
+        }
+        
+        .footer-section h3::after {
+            content: "";
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--accent);
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            margin-top: 15px;
+        }
+        
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            margin: 0 10px;
+            color: white;
+            transition: var(--transition);
+            text-decoration: none;
+        }
+        
+        .social-links a:hover {
+            background: var(--primary);
+            transform: translateY(-5px);
+        }
+        
+        .copyright {
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 900px) {
+            .page-hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .book-card {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <i class="fas fa-graduation-cap"></i>
+                AcademiaPath
+            </a>
+            <ul class="nav-links">
+                <li><a href="file:///C:/Users/HP/OneDrive/Documents/wedDesign/homepage.html">Home</a></li>
+                <li><a href="file:///C:/Users/HP/OneDrive/Documents/wedDesign/stepbystepguide.html">Step by Step</a></li>
+                <li><a href="file:///C:/Users/HP/OneDrive/Documents/wedDesign/resources.html" class="active">Resources</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <h1>Inspiration & Resources</h1>
+            <p>Discover influential educators and essential resources for your academic career journey</p>
+        </div>
+    </section>
+
+    <!-- Resources Section -->
+    <section class="resources-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Influential Figures in Academia</h2>
+                <p>Learn from leading educators and researchers who have shaped modern higher education</p>
+            </div>
+            
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Educator</th>
+                            <th>Field of Expertise</th>
+                            <th>Key Contributions</th>
+                            <th>Resources</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Dr. Helen Rodriguez" class="profile-img">
+                                <div>Dr. Helen Rodriguez</div>
+                            </td>
+                            <td>Educational Psychology</td>
+                            <td>Pioneered research on student motivation and engagement in higher education</td>
+                            <td>
+                                <a href="https://www.researchgate.net" target="_blank">Research Publications</a><br>
+                                <a href="https://www.ted.com" target="_blank">TED Talk: The Engaged Mind</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Professor James Wilson" class="profile-img">
+                                <div>Professor James Wilson</div>
+                            </td>
+                            <td>Curriculum Development</td>
+                            <td>Developed innovative curriculum frameworks adopted by universities worldwide</td>
+                            <td>
+                                <a href="https://www.jstor.org" target="_blank">Journal Articles</a><br>
+                                <a href="https://www.coursera.org" target="_blank">Online Course: Designing Curriculum</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Dr. Aisha Patel" class="profile-img">
+                                <div>Dr. Aisha Patel</div>
+                            </td>
+                            <td>Pedagogical Innovation</td>
+                            <td>Created transformative teaching methodologies for diverse classrooms</td>
+                            <td>
+                                <a href="https://www.pedagogyjournal.com" target="_blank">Teaching Methodology Blog</a><br>
+                                <a href="https://www.youtube.com" target="_blank">Lecture Series</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Professor Robert Chen" class="profile-img">
+                                <div>Professor Robert Chen</div>
+                            </td>
+                            <td>Academic Leadership</td>
+                            <td>Authored seminal works on department leadership in higher education</td>
+                            <td>
+                                <a href="https://www.leadershipinhighered.org" target="_blank">Leadership Resources</a><br>
+                                <a href="https://www.podcasts.com" target="_blank">Academic Leadership Podcast</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img src="https://images.unsplash.com/photo-1548142813-c348350df52b?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Dr. Maria Gonzalez" class="profile-img">
+                                <div>Dr. Maria Gonzalez</div>
+                            </td>
+                            <td>Research Mentorship</td>
+                            <td>Developed effective models for graduate student mentorship</td>
+                            <td>
+                                <a href="https://www.researchmentor.net" target="_blank">Mentorship Guide</a><br>
+                                <a href="https://www.academia.edu" target="_blank">Research Papers</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <!-- Essential Books Section -->
+            <div class="books-section">
+                <div class="section-header">
+                    <h2>Essential Books for Aspiring Lecturers</h2>
+                    <p>Foundational reading to develop your teaching philosophy and academic career</p>
+                </div>
+                
+                <div class="books-container">
+                    <div class="book-card">
+                        <img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="The Craft of Teaching" class="book-cover">
+                        <div class="book-info">
+                            <h3>The Craft of University Teaching</h3>
+                            <div class="author">by Peter Lindsay</div>
+                            <p>A comprehensive guide to developing effective teaching strategies and creating engaging learning environments in higher education.</p>
+                            <a href="#" target="_blank">Learn More</a>
+                        </div>
+                    </div>
+                    
+                    <div class="book-card">
+                        <img src="https://images.unsplash.com/photo-1495640388908-05fa85288e61?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="How Learning Works" class="book-cover">
+                        <div class="book-info">
+                            <h3>How Learning Works</h3>
+                            <div class="author">by Susan Ambrose et al.</div>
+                            <p>Seven research-based principles for smart teaching that translate learning research into practical classroom strategies.</p>
+                            <a href="#" target="_blank">Learn More</a>
+                        </div>
+                    </div>
+                    
+                    <div class="book-card">
+                        <img src="https://images.unsplash.com/photo-1506880018603-83d5b814b5a6?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="The Academic Career" class="book-cover">
+                        <div class="book-info">
+                            <h3>The Academic's Handbook</h3>
+                            <div class="author">by Lori Flores and Jocelyn Olcott</div>
+                            <p>A practical guide to navigating the tenure process, academic publishing, and professional development in academia.</p>
+                            <a href="#" target="_blank">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Academic Institutions Section -->
+            <div class="institutions-section">
+                <div class="section-header">
+                    <h2>Leading Academic Institutions</h2>
+                    <p>Universities with exceptional faculty development programs</p>
+                </div>
+                <div class="institutions-container">
+                    <div class="institution-card">
+                        <img src="https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Cambridge University" class="institution-logo">
+                        <h3>Cambridge University</h3>
+                        <p>World-renowned for its teaching excellence programs and academic mentorship opportunities.</p>
+                        <a href="https://www.cam.ac.uk" target="_blank">Visit Website</a>
+                    </div>
+                    
+                    <div class="institution-card">
+                        <img src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Stanford University" class="institution-logo">
+                        <h3>Stanford University</h3>
+                        <p>Offers exceptional resources for faculty development and innovative teaching methods.</p>
+                        <a href="https://www.stanford.edu" target="_blank">Visit Website</a>
+                    </div>
+                    
+                    <div class="institution-card">
+                        <img src="https://images.unsplash.com/photo-1532622785990-d2c36a76f5a6?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="National University of Singapore" class="institution-logo">
+                        <h3>NUS</h3>
+                        <p>Leading Asian university with strong faculty development and teaching excellence programs.</p>
+                        <a href="https://www.nus.edu.sg" target="_blank">Visit Website</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>AcademiaPath</h3>
+                    <p>Your guide to building a successful career in higher education. Navigate your academic journey with confidence.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <p><a href="#">Home</a></p>
+                    <p><a href="#">Career Path</a></p>
+                    <p><a href="#">Teaching Resources</a></p>
+                    <p><a href="#">Academic Networks</a></p>
+                </div>
+                
+                <div class="footer-section">
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

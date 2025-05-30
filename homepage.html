@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Career Success - Home</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+ <style>
+        /* Global Styles */
+        :root {
+            --primary: #4361ee;
+            --secondary: #3f37c9;
+            --accent: #f72585;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --success: #4cc9f0;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            color: var(--dark);
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Navigation Styles */
+        nav {
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            padding: 15px 0;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+        }
+
+        .logo i {
+            margin-right: 10px;
+            color: var(--accent);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 20px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: var(--transition);
+            padding: 8px 15px;
+            border-radius: 4px;
+        }
+
+        .nav-links a:hover, 
+        .nav-links a.active {
+            background: var(--primary);
+            color: white;
+        }
+
+        /* Page Container */
+        .page {
+            display: none;
+            animation: fadeIn 0.5s ease;
+            min-height: 80vh;
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Page Sections */
+        .section {
+            padding: 60px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-header h1 {
+            font-size: 2.8rem;
+            color: var(--secondary);
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-header h1::after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--accent);
+        }
+
+        .section-header p {
+            color: #555;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Homepage Styles */
+        .hero {
+            display: flex;
+            align-items: center;
+            padding: 40px 0;
+        }
+
+        .hero-content {
+            flex: 1;
+            padding-right: 40px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: var(--secondary);
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            color: #444;
+        }
+
+        .hero-img {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+
+        .hero-img img {
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Steps Page Styles */
+        .steps-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .step-card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            padding: 30px;
+            width: 300px;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .step-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .step-number {
+            position: absolute;
+            top: -15px;
+            right: -15px;
+            background: var(--primary);
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .step-card h3 {
+            margin-bottom: 15px;
+            color: var(--secondary);
+            font-size: 1.5rem;
+        }
+
+        .step-card p {
+            color: #555;
+        }
+
+        /* Resources Page Styles */
+        .resources-section {
+            background: linear-gradient(135deg, #4361ee 0%, #3a0ca3 100%);
+            color: white;
+            padding: 60px 0;
+            border-radius: 10px;
+            margin-top: 30px;
+        }
+
+        .resources-section .section-header h1 {
+            color: white;
+        }
+
+        .table-container {
+            overflow-x: auto;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+            backdrop-filter: blur(10px);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        th, td {
+            padding: 15px 20px;
+            text-align: left;
+        }
+
+        th {
+            background-color: var(--primary);
+            color: white;
+            font-weight: 600;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #e9ecef;
+        }
+
+        td a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        td a:hover {
+            color: var(--accent);
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 40px 0 20px;
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+
+        .footer-section {
+            flex: 1;
+            min-width: 300px;
+            margin: 20px;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 20px;
+            color: var(--success);
+            position: relative;
+            display: inline-block;
+        }
+
+        .footer-section h3::after {
+            content: "";
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--accent);
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            margin-top: 15px;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;margin: 0 10px;
+            color: white;
+            transition: var(--transition);
+            text-decoration: none;
+        }
+
+        .social-links a:hover {
+            background: var(--primary);
+            transform: translateY(-5px);
+        }
+
+        .copyright {
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 900px) {
+            .hero {
+                flex-direction: column;
+                text-align: center;
+                padding: 30px 0;
+            }
+            
+            .hero-content {
+                padding-right: 0;
+                margin-bottom: 40px;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                margin: 0 auto 30px;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container nav-container">
+            <div class="logo">
+                <i class="fas fa-rocket"></i>
+                CareerPath
+            </div>
+            <ul class="nav-links">
+                <li><a href="file:///C:/Users/HP/OneDrive/Documents/wedDesign/homepage.html" class="nav-link active" data-page="home">Home</a></li>
+                <li><a href="file:///C:/Users/HP/OneDrive/Documents/wedDesign/stepbystepguide.html" class="nav-link" data-page="steps">Step by Step</a></li>
+                <li><a href="file:///C:/Users/HP/OneDrive/Documents/wedDesign/resources.html" class="nav-link" data-page="resources">Resources</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Home Page -->
+    <div id="home" class="page active">
+        <section class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h1>Teaching the Future, Becoming the Future</h1>
+                    <p>Becoming a lecturer ia journey of passion, perseverance, and a deep love for learning. its about turning knowledge into inspiration and using every lesson to empower others to think, question, and grow.</p>
+                </div>
+                
+                <div class="hero">
+                    <div class="hero-content">
+                        <h1>From Student to Lecturer: A Dream in Progress</h1>
+                        <p>Hi everyone , My Name is NUR AIN SYAZANA BINTI RAMLI. I'm 22 years old. My dream is to become a Lecturer. A lecturer is more than someone who stands at the front of classroom, they are a guide, a motivator, and a lifelong learner.</p>
+                        <p>Through their words, they open minds and inspire critical thinking, helping students not just memorize facts but understand the world.</p>
+                        <p>With passion and patience, a lecturer lights the path of knowledge, shaping future generations one lesson at a time</p>
+                    </div>
+                    <div class="hero-img">
+                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" alt="Digital Marketing Career">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Steps Page -->
+    <div id="steps" class="page">
+        <section class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h1>Step by Step Guide</h1>
+                    <p>Follow these essential steps to launch your career in digital marketing</p>
+                </div>
+                
+                <div class="steps-container">
+                    <div class="step-card">
+                        <div class="step-number">1</div>
+                        <h3>Educational Foundation</h3>
+                        <p>Obtain a bachelor's degree in marketing, communications, or business. Consider specialized certifications in digital marketing.</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">2</div>
+                        <h3>Develop Core Skills</h3>
+                        <p>Master SEO, content marketing, social media strategy, email marketing, and data analytics through courses and practice.</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">3</div>
+                        <h3>Build Practical Experience</h3>
+                        <p>Complete internships, work on personal projects, or freelance to build your portfolio and gain real-world experience.</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">4</div>
+                        <h3>Specialize & Certify</h3>
+                        <p>Choose a specialization (SEO, PPC, content, social media) and obtain industry certifications from Google, HubSpot, etc.</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">5</div>
+                        <h3>Network & Job Search</h3>
+                        <p>Attend industry events, connect with professionals on LinkedIn, and apply for entry-level positions in agencies or in-house teams.</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">6</div>
+                        <h3>Continuous Learning</h3>
+                        <p>Stay updated with industry trends, algorithm changes, and new platforms through courses, blogs, and professional development.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Resources Page -->
+    <div id="resources" class="page">
+        <section class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h1>Inspiration & Resources</h1>
+                    <p>Learn from industry leaders and access valuable learning resources</p>
+                </div>
+                
+                <div class="resources-section">
+                    <div class="container">
+                        <div class="table-container">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Influential Figure</th>
+                                        <th>Contribution</th>
+                                        <th>Website</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Seth Godin</td>
+                                        <td>Marketing thought leader and author</td>
+                                        <td><a href="https://seths.blog" target="_blank">seths.blog</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Neil Patel</td>
+                                        <td>SEO & content marketing expert</td>
+                                        <td><a href="https://neilpatel.com" target="_blank">ne
